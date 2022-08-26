@@ -1,14 +1,6 @@
 ﻿module CommandLineParser
 
-type QnhOption = MmHg | InHg | Mbar
-type AltOption = Feet | Meters
-
-type CommandLineOptions = {
-  baroUnits : QnhOption;
-  baroValue: double;
-  altUnits : AltOption;
-  altValue: double;
-}
+open CommandLineOptions
 
 let parseFloat s = try Some (float s) with | _ -> None
 

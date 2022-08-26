@@ -6,7 +6,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Include="Feet.fs" />
+    <Compile Include="Meters.fs" />
+    <Compile Include="CommandLineOptions.fs" />
     <Compile Include="CommandLineParser.fs" />
+    <Compile Include="Mbar.fs" />
+    <Compile Include="InHg.fs" />
+    <Compile Include="MmHg.fs" />
+    <Compile Include="Qfe.fs" />
     <Compile Include="Program.fs" />
   </ItemGroup>
 
