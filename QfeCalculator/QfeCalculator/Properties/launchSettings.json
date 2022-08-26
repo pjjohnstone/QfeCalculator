@@ -2,7 +2,7 @@
   "profiles": {
     "QfeCalculator": {
       "commandName": "Project",
-      "commandLineArgs": "--inhg 27.9 --feet 1500"
+      "commandLineArgs": "-i 27.9 -f 1500"
     }
   }
 }

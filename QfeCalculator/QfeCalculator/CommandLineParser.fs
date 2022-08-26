@@ -15,7 +15,7 @@ let parseCommandLine args =
     match args with
     | [] ->
       optionsSoFar
-    | "--mmhg"::xs ->   
+    | "--mmhg"::xs | "-h"::xs ->   
       match (parseFloat xs.Head) with
       | Some x ->
         let optionsSoFar = { optionsSoFar with baroUnits = MmHg; baroValue = x}
@@ -23,7 +23,7 @@ let parseCommandLine args =
       | None -> 
         eprintfn "--mmhg must be followed by a value"
         parseCommandLine xs.Tail optionsSoFar
-    | "--inhg"::xs ->   
+    | "--inhg"::xs | "-i"::xs ->   
       match (parseFloat xs.Head) with
       | Some x ->
         let optionsSoFar = { optionsSoFar with baroUnits = InHg; baroValue = x}
@@ -31,7 +31,7 @@ let parseCommandLine args =
       | None -> 
         eprintfn "--inhg must be followed by a value"
         parseCommandLine xs.Tail optionsSoFar
-    | "--mbar"::xs ->   
+    | "--mbar"::xs | "-b"::xs ->   
       match (parseFloat xs.Head) with
       | Some x ->
         let optionsSoFar = { optionsSoFar with baroUnits = Mbar; baroValue = x}
@@ -39,7 +39,7 @@ let parseCommandLine args =
       | None -> 
         eprintfn "--mbar must be followed by a value"
         parseCommandLine xs.Tail optionsSoFar
-    | "--feet"::xs ->   
+    | "--feet"::xs | "-f"::xs ->   
       match (parseFloat xs.Head) with
       | Some x ->
         let optionsSoFar = { optionsSoFar with altUnits = Feet; altValue = x}
@@ -47,7 +47,7 @@ let parseCommandLine args =
       | None -> 
         eprintfn "--feet must be followed by a value"
         parseCommandLine xs.Tail optionsSoFar
-    | "--meters"::xs ->   
+    | "--meters"::xs | "-m"::xs ->   
       match (parseFloat xs.Head) with
       | Some x ->
         let optionsSoFar = { optionsSoFar with altUnits = Meters; altValue = x}
