@@ -13,7 +13,7 @@ let calculate options =
     | InHg -> Mbar.toInHg (qfe (InHg.toMbar options.baroValue) options.altValue)
   | Meters ->
     match options.baroUnits with
-    | Mbar -> qfe (Meters.toFeet options.baroValue) options.altValue
+    | Mbar -> qfe options.baroValue (Meters.toFeet options.altValue)
     | MmHg -> Mbar.toMmHg (qfe (MmHg.toMbar options.baroValue) (Meters.toFeet options.altValue))
     | InHg -> Mbar.toInHg (qfe (InHg.toMbar options.baroValue) (Meters.toFeet options.altValue))
     
